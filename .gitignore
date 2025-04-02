@@ -1,0 +1,54 @@
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders (venv or custom named environments)
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore dependency logs & installed packages
+*.egg-info/
+*.dist-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore IDE & editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignore environment variable files (secrets, database credentials)
+.env
+*.env
+.env.local
+.env.production
+
+# Ignore compiled code & logs
+*.log
+logs/
+*.sqlite3
+db.sqlite3
+
+# Ignore Jupyter Notebook checkpoints (if using)
+.ipynb_checkpoints/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Heroku and deployment-specific files (optional)
+*.heroku/
+venv/
+.env
+amas/
+
+# Ignorne Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Jupyter Notbook files
+*.ipynb
