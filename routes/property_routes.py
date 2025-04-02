@@ -277,7 +277,7 @@ def upload_photo():
         endpoint_hostname = R2_ENDPOINT.replace("https://", "")
         file_url = f"https://{bucket_name}.{endpoint_hostname}/{filename}"
         print(f"[UPLOAD DEBUG] File successfully uploaded: {file_url}")
-        return jsonify({"url": f"https://pub-5639854ae5864779be6f398a0fa1c555.r2.dev/{filename}", "label": label}), 200
+        return jsonify({"url": f"{R2_ENDPOINT}/{filename}", "label": label}), 200
     except Exception as e:
         print(f"[UPLOAD DEBUG] Error during upload: {str(e)}")
         return jsonify({"error": str(e)}), 500
@@ -362,7 +362,7 @@ def bulk_create_properties():
                 sent=prop.get("sent"),
                 preferred_tenant=prop.get("preferred_tenant"),
                 photo_urls=prop.get("photo_urls") or {
-                    "main": ["https://pub-5639854ae5864779be6f398a0fa1c555.r2.dev/noimageyet.jpg"]
+                    "main": [f"{R2_ENDPOINT}/noimageyet.jpg"]
                 }
             )
             db.session.add(new_property)
